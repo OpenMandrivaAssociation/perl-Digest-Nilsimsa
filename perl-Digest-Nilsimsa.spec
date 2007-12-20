@@ -12,6 +12,7 @@ Group:		Development/Perl
 Source:		http://www.cpan.org/authors/id/V/VI/VIPUL/%{real_name}-%{version}.tar.bz2
 URL:		http://search.cpan.org/dist/%{real_name}/
 BuildRequires:	perl-devel
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	perl
 
 %description
