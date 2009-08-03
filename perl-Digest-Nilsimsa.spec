@@ -1,15 +1,15 @@
 %define	name	perl-Digest-Nilsimsa
 %define	real_name Digest-Nilsimsa
-%define	version	0.06
-%define	release	%mkrel 12
+%define	upstream_version	0.06
+%define	release	%mkrel 1
 
 Summary:	Perl interface to the Nilsima Algorithm	
 Name:		%{name}
-Version:	%{version}
+Version:	%perl_convert_version %{upstream_version}
 Release:	%{release}
 License:	GPL or Artistic
 Group:		Development/Perl
-Source:		http://www.cpan.org/authors/id/V/VI/VIPUL/%{real_name}-%{version}.tar.bz2
+Source:		http://www.cpan.org/authors/id/V/VI/VIPUL/%{real_name}-%{upstream_version}.tar.bz2
 URL:		http://search.cpan.org/dist/%{real_name}/
 BuildRequires:	perl-devel
 BuildRoot:	%{_tmppath}/%{name}-buildroot
@@ -19,7 +19,7 @@ Requires:	perl
 Digest-Nilsimsa module for perl.
 
 %prep
-%setup -q -n %{real_name}-%{version}
+%setup -q -n %{real_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
