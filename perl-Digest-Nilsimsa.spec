@@ -1,7 +1,7 @@
 %define	name	perl-Digest-Nilsimsa
 %define	real_name Digest-Nilsimsa
 %define	upstream_version	0.06
-%define	release	%mkrel 4
+%define	release	%mkrel 5
 
 Summary:	Perl interface to the Nilsima Algorithm	
 Name:		%{name}
