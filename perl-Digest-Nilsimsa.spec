@@ -9,6 +9,7 @@ License:	GPLv2 or Artistic
 Group:		Development/Perl
 Url:		https://search.cpan.org/dist/%{modname}/
 Source0:	http://www.cpan.org/authors/id/V/VI/VIPUL/%{modname}-%{modver}.tar.bz2
+BuildRequires:	make
 BuildRequires:	perl-devel
 Requires:	perl
 
