@@ -3,12 +3,12 @@
 
 Summary:	Perl interface to the Nilsima Algorithm	
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	19
+Version:	%{modver}
+Release:	20
 License:	GPLv2 or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}/
-Source0:	http://www.cpan.org/authors/id/V/VI/VIPUL/%{modname}-%{modver}.tar.bz2
+Url:		https://metacpan.org/dist/Digest-Nilsimsa
+Source0:	https://cpan.metacpan.org/authors/id/V/VI/VIPUL/Digest-Nilsimsa-%{modver}.tar.gz
 BuildRequires:	make
 BuildRequires:	perl-devel
 Requires:	perl
