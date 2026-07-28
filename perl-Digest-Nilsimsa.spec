@@ -4,7 +4,7 @@
 Summary:	Perl interface to the Nilsima Algorithm	
 Name:		perl-%{modname}
 Version:	%{modver}
-Release:	22
+Release:	23
 License:	GPLv2 or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Digest-Nilsimsa
@@ -21,10 +21,13 @@ Digest-Nilsimsa module for perl.
 
 %build
 # old XS: clang defaults to -Werror=implicit-function-declaration
-export CFLAGS="${CFLAGS:-%{optflags}} -Wno-error=implicit-function-declaration -Wno-implicit-function-declaration"
-export CXXFLAGS="${CXXFLAGS:-%{optflags}} -Wno-error=implicit-function-declaration -Wno-implicit-function-declaration"
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-%make OPTIMIZE="$RPM_OPT_FLAGS"
+%{__perl} Makefile.PL INSTALLDIRS=vendor \
+  OPTIMIZE="%{optflags} -Wno-error=implicit-function-declaration -Wno-implicit-function-declaration"
+find . -name Makefile -print0 | xargs -0 sed -i \
+  -e 's/^\(CCFLAGS *=.*\)/\1 -Wno-error=implicit-function-declaration -Wno-implicit-function-declaration/' \
+  -e 's/^\(OPTIMIZE *=.*\)/\1 -Wno-error=implicit-function-declaration -Wno-implicit-function-declaration/' \
+  -e 's/^\(CCCDLFLAGS *=.*\)/\1 -Wno-error=implicit-function-declaration -Wno-implicit-function-declaration/'
+%make
 
 %check
 make test
