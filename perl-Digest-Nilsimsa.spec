@@ -4,7 +4,7 @@
 Summary:	Perl interface to the Nilsima Algorithm	
 Name:		perl-%{modname}
 Version:	%{modver}
-Release:	21
+Release:	22
 License:	GPLv2 or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Digest-Nilsimsa
